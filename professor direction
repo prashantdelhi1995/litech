@@ -1,0 +1,30 @@
+def can_rescue_tokyo(S, Tokyo_direction):
+    # Define initial orientation
+    professor_orientation = 'North'
+    
+    # Define a dictionary to map directions after turning left or right
+    directions = {
+        'North': {'L': 'West', 'R': 'East'},
+        'East': {'L': 'North', 'R': 'South'},
+        'South': {'L': 'East', 'R': 'West'},
+        'West': {'L': 'South', 'R': 'North'}
+    }
+    
+    # Iterate through each instruction
+    for instruction in S:
+        # Update the Professor's orientation based on the instruction
+        professor_orientation = directions[professor_orientation][instruction]
+    
+    # Check if the Professor's final orientation matches Tokyo's direction
+    return professor_orientation == Tokyo_direction
+
+
+# Example usage:
+S = "LRLRLRR"  # Example sequence of instructions
+Tokyo_direction = "South"  # Tokyo's direction
+
+# Check if the Professor can rescue Tokyo
+if can_rescue_tokyo(S, Tokyo_direction):
+    print("The Professor can successfully rescue Tokyo!")
+else:
+    print("The Professor cannot rescue Tokyo with the given instructions.")
