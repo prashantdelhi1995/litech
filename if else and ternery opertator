@@ -1,0 +1,15 @@
+example 1 code
+distance=int(input("please enter the distance"));
+if distance>=0 and distance<100:
+    print(5)
+elif distance>=1100 and distance<500:
+    print(8)
+elif distance>=500 and distance<1000:
+    print(10)
+elif distance>=1000:
+    print(12)
+
+
+example 2  ternery operator
+marks=int(input("please enter your marks"))
+print("pass")if marks>=40 else print("fail")
